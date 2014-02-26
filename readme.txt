@@ -4,7 +4,7 @@ Donate link: http://www.tpginc.net/wordpress-plugins/donate/
 Tags: redirect, login required
 Requires at least: 3.0    
 Tested up to: 3.8
-Stable tag: 1.00.01
+Stable tag: 1.0.1
 
 if not logged in, redirects to site  
 
