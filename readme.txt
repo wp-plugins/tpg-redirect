@@ -3,16 +3,16 @@ Contributors: Criss Swaim
 Donate link: http://www.tpginc.net/wordpress-plugins/donate/
 Tags: redirect, login required
 Requires at least: 3.0    
-Tested up to: 3.5
-Stable tag: 1.00.00
+Tested up to: 3.8
+Stable tag: 1.00.01
 
 if not logged in, redirects to site  
 
 == Description ==
 
-When this plugin is active and the option enabled, it checks for a logged in user.  If the visitor is not logged in, then the user is redirected to another site.  If logged in, site acts as normal.
+When this plugin is active and the option enabled, it checks for a logged in user.  If the visitor is not logged in, then the user is redirected to another site as defined in the redirect path option.  If logged in, site acts as normal.
 
-Sites with this plugin active must access with sitename.xxx/wp-admin
+Sites with this plugin active must access with sitename/wp-admin
 	
 == Usage ==
 
@@ -42,8 +42,10 @@ If you have a development site and you want to keep unregistered users from acce
 1. Admin page
 
 == Changelog ==
+= 1.0.1=
+* Update doc on settings page.
 
-= 1.0 .0=
+= 1.0.0=
 * Initial release. 
 
 == Upgrade Notice ==

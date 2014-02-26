@@ -4,30 +4,20 @@
 	{icon}<h2 class="tgp-head">TPG Redirect</h2>
 	<p>&nbsp;</p>
 	
-  <div id="rd-tabbed-area">
+	<div id="rd-tabbed-area">
 		<ul class="rd-tabs">
-			<li><a href="#rd-overview">Overview</a></li>
 			<li><a href="#rd-settings">Settings</a></li>
 		</ul>
 		
-	<div id="rd-overview">
+	<div id="rd-settings">
 		<h3>Overview</h3>
-		<p>The</p>
+		<p>When this plugin is active and the option enabled, it checks for a logged in user.  If the visitor is not logged in, then the user is redirected to site specified in the option below.  If logged in, site acts as normal.</p>
+
+		<p>Sites with this plugin active must access with sitename/wp-admin</p>
+		<div>
+		{settings}
+		</div>
 		
-		<p class="tgp-warn">WARNING: </p>
-	</div>
-	<div id="rd-settings">{settings}
-		<h3>Instructions for Upgrading to the Premium Version:</h3>
-		<p>Purchase a license at <a href="http://www.tpginc.net/product/tpg-redirect/" target="_blank">http://www.tpginc.net/product/tpg-redirect/</a></p>
-		<p>After purchasing a licences, an email will be sent to you with the Lic Key.</p>
-		
-		<ol>To activate:
-		<li>Add the Lic Key and Lic Email on the TPG Redirect Settings tab</li>
-		<li>Select the Keep Options on uninstall checkbox</li>
-		<li>Click the Update Options to save the options </li>
-		<li>Click the Validate Lic to register and receive new update notices</li>
-		<br />
-		</ol>
 	
 	</div>
   </div>
