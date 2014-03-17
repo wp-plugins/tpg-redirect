@@ -26,7 +26,7 @@
 	 * @return   class    $obj		 class
 	 */
 	function create_process($_opts,$_paths) {
-		
+		$obj=NULL;
 		if ($_opts['rd-active']) {
 			require_once("class-tpg-rd-process.php");
 			$obj = new tpg_rd_process($_opts,$_paths);
