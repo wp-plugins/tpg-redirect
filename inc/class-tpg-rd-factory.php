@@ -25,7 +25,7 @@
 	 * @param    array    $rd_paths  paths array
 	 * @return   class    $obj		 class
 	 */
-	function create_process($_opts,$_paths) {
+	public static function create_process($_opts,$_paths) {
 		$obj=NULL;
 		if ($_opts['rd-active']) {
 			require_once("class-tpg-rd-process.php");
@@ -48,7 +48,7 @@
 	 * @param    array    $rd_paths  paths array
 	 * @return   class 	  $obj		 class
 	 */
-	function create_admin($_opts,$_paths) {
+	public static function create_admin($_opts,$_paths) {
 		require_once("class-tpg-rd-admin.php");
 		$obj = new tpg_rd_admin($_opts,$_paths);
 		return $obj;
@@ -66,7 +66,7 @@
 	 * @param    void
 	 * @return   class 	  $obj		 class
 	 */
-	function create_paypal_button() {
+	public static function create_paypal_button() {
 		require_once("class-tpg-pp-donate-button.php");
 		$obj = new tpg_pp_donate_button();
 		return $obj;
@@ -85,7 +85,7 @@
 	 * @param    array    $gp_paths  paths array
 	 * @return   class 	  $obj		 class
 	 */
-	function create_lic_validation($_opts,$_paths,$module_data) {
+	public static function create_lic_validation($_opts,$_paths,$module_data) {
 		require_once("class-tpg-lic-validation.php");
 		$obj = new tpg_lic_validation($_opts,$_paths,$module_data);
 		return $obj;
@@ -103,7 +103,7 @@
 	 * @param    void
 	 * @return   class 	  $obj		 class
 	 */
-	function create_resp_obj() {
+	public static function create_resp_obj() {
 		require_once("class-tpg-resp-obj.php");
 		$obj = new tpg_resp_obj();
 		return $obj;
@@ -121,7 +121,7 @@
 	 * @param    void
 	 * @return   class 	  $obj		 class
 	 */
-	function create_wp_upgrader() {
+	public static function create_wp_upgrader() {
 		require_once("class-tpg-upgrader.php");
 		$obj = new tpg_upgrader();
 		return $obj;
