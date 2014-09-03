@@ -4,7 +4,7 @@ Donate link: http://www.tpginc.net/wordpress-plugins/donate/
 Tags: redirect, login required
 Requires at least: 3.0    
 Tested up to: 3.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 if not logged in, redirects to site  
 
@@ -42,6 +42,9 @@ If you have a development site and you want to keep unregistered users from acce
 1. Admin page
 
 == Changelog ==
+= 1.0.2=
+* Correct error on static calls.
+
 = 1.0.1=
 * Update doc on settings page.
 
