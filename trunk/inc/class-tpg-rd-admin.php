@@ -7,13 +7,25 @@ class tpg_rd_admin {
 	
 	private $pp_btn='';
 					
+	protected $vl=object;
+					
 	//variables set by constructor				
 	public $rd_opts=array();
 	public $rd_paths=array();
+	public $plugin_data=array();
+	public $module_data=array();
 	
 	function __construct($opts,$paths) {
 		$this->rd_opts=$opts;
 		$this->rd_paths=$paths;
+		$this->module_data= array( 
+				'updt-sys'=>'wp',
+				"module"=>'tpg-redirect',
+				);
+		
+		$this->vl = tpg_gp_factory::create_lic_validation($this->rd_opts,$this->rd_paths,$this->module_data);
+		$this->vl->get_plugin_info();
+		$this->plugin_data = $this->vl->plugin_data;
 		
 		// Register link to the pluging list
 		add_filter('plugin_action_links', array(&$this, 'tpg_redirect_settings_link'), 10, 2);
@@ -145,13 +157,13 @@ class tpg_rd_admin {
 		$action_link = str_replace( '%7E', '~', $_SERVER['REQUEST_URI'])."#rd-settings"; 
 		//replace tokens in text
 		$form_output = str_replace("{action-link}",$action_link,$form_output);
-		
+		$ver_txt = $this->plugin_data['Version'];
 		//set tokens in form
 		$form_output = str_replace("{cur-ver}",$ver_txt,$form_output);
-		$form_output = str_replace("{valid-lic-msg}",$valid_txt,$form_output);
-		$form_output = str_replace("{update-button}",$upd_button,$form_output);
+		//$form_output = str_replace("{valid-lic-msg}",$valid_txt,$form_output);
+		//$form_output = str_replace("{update-button}",$upd_button,$form_output);
 		//$form_output = str_replace("{download-link}",$this->resp_data['dl-link'],$form_output);
-		$form_output = str_replace("{download-url}",$this->resp_data['dl-url'],$form_output);
+		//$form_output = str_replace("{download-url}",$this->resp_data['dl-url'],$form_output);
 
 		return $form_output;	
 	}
@@ -272,7 +284,7 @@ class tpg_rd_admin {
 				<h3><a class="togbox">+</a> TPG Redirect Options</h3>
 				
 				<div class="inside"  style="padding:10px;">
-					<form name="getposts_options" method="post" action="{action-link}">
+					<form name="redirect_options" method="post" action="{action-link}">
 						<h4>Redirect Options - Current version {cur-ver}</h4>
 						<table class="form-table">	
 							<tr>		
