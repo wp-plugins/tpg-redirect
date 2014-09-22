@@ -24,7 +24,6 @@ Set the address for the redirect
 The active/inactive switch allows temporary disabling of the plugin
 
 
-
 == Installation ==
 
 1. Upload the plugin to the `/wp-content/plugins/` directory and unzip it.
