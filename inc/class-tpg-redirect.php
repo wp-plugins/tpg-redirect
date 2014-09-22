@@ -26,6 +26,7 @@ class tpg_redirect {
 	public $rd_opts=array(
 			"rd-path"=>"",
 			"rd-active"=>false,
+			"valid-lic"=>false,
 			);
 
  	// define constants for the plugin
