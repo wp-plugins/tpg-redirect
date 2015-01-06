@@ -26,6 +26,8 @@ class tpg_redirect {
 	public $rd_opts=array(
 			"rd-path"=>"",
 			"rd-active"=>false,
+			"rd-show-page"=>false,
+			"rd-msg"=>"Our site is under construction. Please check back soon.",
 			"valid-lic"=>false,
 			);
 

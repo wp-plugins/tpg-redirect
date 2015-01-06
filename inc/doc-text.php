@@ -10,10 +10,10 @@
 		</ul>
 		
 	<div id="rd-settings">
-		<h3>Overview</h3>
+		<h3>Overview</h3> {donate}
 		<p>When this plugin is active and the option enabled, it checks for a logged in user.  If the visitor is not logged in, then the user is redirected to site specified in the option below.  If logged in, site acts as normal.</p>
 
-		<p>Sites with this plugin active must access with sitename/wp-admin</p>
+		<p>Sites with this plugin active must access with sitename/wp-admin</p> 
 		<div>
 		{settings}
 		</div>

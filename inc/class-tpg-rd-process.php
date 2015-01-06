@@ -38,12 +38,33 @@ class tpg_rd_process {
 	 */
 	public function tpg_redirect(){
 		if (!is_user_logged_in()) {
-			$new_site='http://'.$this->rd_opts['rd-path'];
-			wp_redirect($new_site); 
+			if ($this->rd_opts['rd-show-page']) {
+				$this->display_page();
+			} else {
+				$new_site='http://'.$this->rd_opts['rd-path'];
+				wp_redirect($new_site); 
+			}
 			exit;
 		}
 	}
-		
+	
+	/*
+	 *	display page
+	 *  if user not logged in, then redirect to path specified in options
+	 *
+	 * @package WordPress
+	 * @subpackage tpg_redirect
+	 * @since 0.1
+	 *
+	 * test to see if user is logged in and if not, redirect to path specifiec in the opts
+	 * 	
+	 * @param    null
+	 * @return   null
+	 */
+	public function display_page(){
+
+		require_once($this->rd_paths['dir'].'templates/template-default.php');
+	}	
 	
 }//end class
 ?>

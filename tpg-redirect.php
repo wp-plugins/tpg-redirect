@@ -3,7 +3,7 @@
 Plugin Name: TPG Redirect
 Plugin URI: http://www.tpginc.net/wordpress-plugins/
 Description: Redirects to specified page when user not logged in.
-Version: 1.0.3
+Version: 1.0.4
 Author: Criss Swaim
 Author URI: http://www.tpginc.net/plugins/
 License: This software is licensed under <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL</a> version 2.0 or later.

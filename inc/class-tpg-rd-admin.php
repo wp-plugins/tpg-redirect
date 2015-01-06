@@ -23,7 +23,7 @@ class tpg_rd_admin {
 				"module"=>'tpg-redirect',
 				);
 		
-		$this->vl = tpg_gp_factory::create_lic_validation($this->rd_opts,$this->rd_paths,$this->module_data);
+		$this->vl = tpg_rd_factory::create_lic_validation($this->rd_opts,$this->rd_paths,$this->module_data);
 		$this->vl->get_plugin_info();
 		$this->plugin_data = $this->vl->plugin_data;
 		
@@ -188,6 +188,12 @@ class tpg_rd_admin {
 			$new_opts['rd-active'] = true;
 		}
 		
+		//
+		if (!array_key_exists("rd-show-page",$new_opts)) {
+			$new_opts['rd-show-page'] = false;
+		} else {
+			$new_opts['rd-show-page'] = true;
+		}
 		
 		//apply new values to rd_opts 
 		foreach($new_opts as $key => $value) {
@@ -271,6 +277,9 @@ class tpg_rd_admin {
 		
 		//test the check boxes to see if the value should be checked
 		$ck_rd_active = ($this->rd_opts['rd-active'])? 'checked=checked' : '';
+		$ck_rd_show_page = ($this->rd_opts['rd-show-page'])? 'checked=checked' : '';
+		//text
+		$text_show_page = $this->rd_opts['rd-msg'];
 		//text for button
 		$btn_updt_opts_txt = __('Update Options', 'rd_update_opts' ) ;
 		//create output form
@@ -286,12 +295,25 @@ class tpg_rd_admin {
 				<div class="inside"  style="padding:10px;">
 					<form name="redirect_options" method="post" action="{action-link}">
 						<h4>Redirect Options - Current version {cur-ver}</h4>
-						<table class="form-table">	
-							<tr>		
-							<td>Redirect Path: </td><td><input type="text" name="rd_opts[rd-path]" value="{$this->rd_opts['rd-path']}" size="60"> </td><td>(the path to redirect to when user not logged in<br />without http://)</td>
+						<table class="form-table">
+							<tr><td></td><td>Either show a page by checking the 'Show Page' checkbox or redirect if unchecked</td>	</tr>
+							<tr>	
+							<td>Show Page:  </td><td><input type="checkbox" name="rd_opts[rd-show-page]" id="id_show-page" value="true" $ck_rd_show_page /></td>
 							</tr>
+							
+							<tr><td></td><td>Enter the message to be displayed</td>	</tr>
+							<tr>	
+							<td>Redirect Message: </td><td><textarea type="text" name="rd_opts[rd-msg]" value="{$this->rd_opts['rd-msg']}" rrows=4 cols=50>$text_show_page</textarea> </td>
+							</tr>
+							<tr><td></td><td>==============================================</td></tr>
+								
+							<tr><td></td><td>(the path to redirect to when user not logged in without http://)</td>	</tr>
+							<tr>	
+							<td>Redirect Path: </td><td><input type="text" name="rd_opts[rd-path]" value="{$this->rd_opts['rd-path']}" size="60"> </td>
+							</tr>
+							<tr><td></td><td>Check to activate this plugin.</td>	</tr>
 							<tr>
-							<td>Activate Plugin:  </td><td><input type="checkbox" name="rd_opts[rd-active]" id="id_rd_active" value="true" $ck_rd_active /></td><td>Check to activate this plugin.</td>				
+							<td>Activate Plugin:  </td><td><input type="checkbox" name="rd_opts[rd-active]" id="id_rd_active" value="true" $ck_rd_active /></td>			
 							</tr>
 			</table>
 							<!--//values are used in switch to determine processing-->

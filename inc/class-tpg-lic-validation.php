@@ -42,7 +42,7 @@ class tpg_lic_validation {
 		$this->opts=$_opts;
 		$this->paths=$_paths;
 		$this->module_data=$_module;
-		$this->ro = tpg_gp_factory::create_resp_obj();
+		$this->ro = tpg_rd_factory::create_resp_obj();
 		
 	}
 	
