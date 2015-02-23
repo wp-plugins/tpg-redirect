@@ -4,7 +4,7 @@ Donate link: http://www.tpginc.net/wordpress-plugins/donate/
 Tags: redirect, login required
 Requires at least: 3.0    
 Tested up to: 4.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 if a user is not logged in, redirect to site specified site or show page with user defined message. 
 
@@ -41,6 +41,9 @@ If you have a development site and you want to keep unregistered users from acce
 1. Admin page
 
 == Changelog ==
+= 1.0.5=
+* correct class conflict error with shared classes 
+
 = 1.0.4=
 * add option to show page with message
 * Correct fatal error.

@@ -53,6 +53,8 @@
 		$obj = new tpg_rd_admin($_opts,$_paths);
 		return $obj;
 	}
+
+	/** ****** shared tpg classes ****** **/
 		
 	/**
 	 * generate the paypal button class
@@ -67,7 +69,9 @@
 	 * @return   class 	  $obj		 class
 	 */
 	public static function create_paypal_button() {
-		require_once("class-tpg-pp-donate-button.php");
+		if (!class_exists("tpg_pp_donate_button")) {
+			require_once("class-tpg-pp-donate-button.php");
+		}
 		$obj = new tpg_pp_donate_button();
 		return $obj;
 	}
@@ -86,7 +90,9 @@
 	 * @return   class 	  $obj		 class
 	 */
 	public static function create_lic_validation($_opts,$_paths,$module_data) {
-		require_once("class-tpg-lic-validation.php");
+		if (!class_exists("tpg_lic_validation")) {
+			require_once("class-tpg-lic-validation.php");
+		}
 		$obj = new tpg_lic_validation($_opts,$_paths,$module_data);
 		return $obj;
 	}
@@ -104,7 +110,9 @@
 	 * @return   class 	  $obj		 class
 	 */
 	public static function create_resp_obj() {
-		require_once("class-tpg-resp-obj.php");
+		if (!class_exists("tpg_resp_obj")) {
+			require_once("class-tpg-resp-obj.php");
+		}
 		$obj = new tpg_resp_obj();
 		return $obj;
 	}
@@ -122,7 +130,9 @@
 	 * @return   class 	  $obj		 class
 	 */
 	public static function create_wp_upgrader() {
-		require_once("class-tpg-upgrader.php");
+		if (!class_exists("tpg_upgrader")) {
+			require_once("class-tpg-upgrader.php");
+		}
 		$obj = new tpg_upgrader();
 		return $obj;
 	}
